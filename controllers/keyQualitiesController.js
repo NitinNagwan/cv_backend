@@ -1,15 +1,13 @@
-const expertise = require("../Models/expertise");
+const keyQualities = require("../Models/keyQualitiesModel");
 
-const expertiseController = {
-  async addExpertise(req, res) {
+const keyQualityController  = {
+  async addQuality(req, res) {
     try {
-      const { name, attachment } = req.body;
-      var Name = name.toUpperCase();
-      const newExpertise = new expertise({
-        name: Name,
-        image_url: attachment,
+      const { name } = req.body;
+      const newQuality = new keyQualities({
+        name: name,
       });
-      newExpertise.save((err, success) => {
+       newQuality.save((err, success) => {
         if (err) {
           res.json({
             success: false,
@@ -19,7 +17,7 @@ const expertiseController = {
         } else {
           res.json({
             success: true,
-            message: "Expertise added successfully",
+            message: "Key quality added successfully",
           });
         }
       });
@@ -32,18 +30,18 @@ const expertiseController = {
     }
   },
 
-  editExpertise(req, res) {
+  editQuality(req, res) {
     try {
       const { id } = req.params;
-      const { name, attachment } = req.body;
+      const { name } = req.body;
 
-      const updatedExpertise = {
+      const updatedQuality = {
         name: name,
-        image_url: attachment,
+        // image_url: attachment,
       };
 
-      expertise
-        .findByIdAndUpdate(id, updatedExpertise, (err, success) => {
+      keyQualities
+        .findByIdAndUpdate(id, updatedQuality, (err, success) => {
           if (err) {
             res.json({
               success: false,
@@ -59,7 +57,7 @@ const expertiseController = {
             } else {
               res.json({
                 success: true,
-                message: "Successfully updated expertise details",
+                message: "Successfully updated key quality details",
               });
             }
           }
@@ -74,11 +72,11 @@ const expertiseController = {
     }
   },
 
-  fetchExpertise(req, res) {
+  fetchQuality(req, res) {
     try {
       const { id } = req.params;
 
-      expertise
+      keyQualities
         .findById(id, (err, docs) => {
           if (err) {
             res.json({
@@ -90,12 +88,12 @@ const expertiseController = {
             if (!docs) {
               res.json({
                 success: false,
-                message: "Expertise does not exsist",
+                message: "Key quality does not exsist",
               });
             } else {
               res.json({
                 success: true,
-                message: "Successfully fetched expertise details",
+                message: "Successfully fetched key quality details",
                 data: docs,
               });
             }
@@ -111,7 +109,7 @@ const expertiseController = {
     }
   },
 
-  async expertiseList(req, res) {
+  async qualityList(req, res) {
     const { pageNumber, numberOfItems, searchKey } = req.body;
 
     try {
@@ -120,24 +118,25 @@ const expertiseController = {
       var searchObject;
 
       if (searchKey) {
-        const regex = new RegExp(`${searchKey.toUpperCase()}`);
+        const regex = new RegExp(`${searchKey}`);
         searchObject = {
           name: regex,
+          // email: regex,
         };
       } else {
         searchObject = {};
       }
 
-      const Expertise = await expertise
+      const quality = await keyQualities
         .find(searchObject)
         .sort("_id")
         .limit(limit * 1)
         .skip((page - 1) * limit)
         .exec();
 
-      const count = await expertise.countDocuments();
+      const count = await keyQualities.countDocuments();
 
-      if (Expertise.length == 0) {
+      if (quality.length == 0) {
         res.json({
           success: false,
           message: "No data available",
@@ -145,8 +144,8 @@ const expertiseController = {
       } else {
         res.json({
           success: true,
-          message: "Successfully fetched expertise list",
-          data: Expertise,
+          message: "Successfully fetched key quality list",
+          data: quality,
           totalPages: Math.ceil(count / limit),
           currentPage: page,
           totalLength: count,
@@ -161,11 +160,11 @@ const expertiseController = {
     }
   },
 
-  deleteExpertise(req, res) {
+  deleteQuality(req, res) {
     try {
       const { id } = req.params;
 
-      expertise
+      keyQualities
         .findByIdAndDelete(id, (err, docs) => {
           if (err) {
             res.json({
@@ -177,12 +176,12 @@ const expertiseController = {
             if (!docs) {
               res.json({
                 success: false,
-                message: "Expertise does not exsist",
+                message: "Key quality does not exsist",
               });
             } else {
               res.json({
                 success: true,
-                message: "Successfully deleted expertise details",
+                message: "Successfully deleted key quality details",
                 data: docs,
               });
             }
@@ -201,4 +200,4 @@ const expertiseController = {
 
 };
 
-module.exports = expertiseController;
+module.exports = keyQualityController ;

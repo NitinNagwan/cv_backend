@@ -12,6 +12,6 @@ const Interest = new Schema({
         unique: true
     }
     
-})
+},{timestamps: true})
 
 module.exports = mongoose.model("interest",Interest);

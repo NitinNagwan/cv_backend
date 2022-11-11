@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="./public/stylesheets/cvTemplate.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div className="book">
+        <div className="page">
+        <!-- <Watermark text="Valuecoders" textSize={160} rotate={0}> -->
+          <header>
+            <div className='main-header'>
+              <div className='header-name'>
+                <p className='first-name'>{data.firstname}</p>
+                <p className='last-name'>{data.lastname}</p>
+                <p className='designation'>{data.designation}</p>
+              </div>
+              <div className='header-profile'>
+                {data.origin ? <div className='align-logo'>
+                  <img src="assets/location.png" width="15px" height="17px" alt='location' />
+                  <p className='origin'>Origin: {data.origin}</p></div> : null}
+                {data.experienceYear ? <div className='align-logo'>
+                  <img src="assets/exp.png" width="20px" height="20px" alt='exp' />
+                  <p className='experience'>Experience :{data.experienceYear}+ year</p></div> : null}
+                {data.availability ? <div className='align-logo'>
+                  <img src="assets/time.png" width="17px" height="17px" alt='time'/>
+                  <p className='availability'> Availability: {data.availability}</p></div> : null}
+              </div>
+            </div>
+            <!-- <div className='profile-pic'>
+              <img src="assets/r2.png" width={"200px"} height={"200px"} alt='r2'/>
+            </div> -->
+          </header>
+          <!-- <section className='main-section'>
+            <section className='left-section'>
+              <div className='profile'>
+                <h1 className='profile-heading'>PROFILE</h1>
+                <p className='profile-summary'>{data.summary}</p>
+                <h5 className='quality-heading'>KEY QUALITIES</h5>
+                <div className='qualities align-checkbox-icon'>
+                  {data?.keyQualities?.map((item, index) => (
+                    <div className='align-checkbox-icon' key={index}>
+                      <>
+                        <img src="assets/checkcircle.png" width={"15px"} height={"15px"} alt='checkCircle'/>
+    
+                        <p className='quality'>{item?.quality?.quality} </p> </>
+    
+                    </div>
+                  ))}
+    
+                </div>
+              </div>
+              <div className='expertises'>
+                <h2 className='experties-heading'>EXPERTISE</h2>
+                <div className='skills'>
+                  {data?.expertise?.map(({ skill, years }, index) => (
+    
+                    <div className='expertise' key={index}>
+                      <div className='skill'><img className=" skill-img" src={`assets/${skill}.png`} alt='W' width="25" height="25" />
+                      <p style={{ paddingLeft: '10px' }}>
+                      {skill}
+                      </p>
+                      </div>
+                      <Rating name="disabled" value={2} disabled />
+                      <p className='experience-year'>{years}<span className='experience-span'>+ years</span></p>
+                    <br />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {data?.experience[0]?.titles?.length > 0 ? <div className='experiene-section'>
+                <h3 className='experience-heading'>PROFESSIONAL EXPERIENCE</h3>
+                <div className='experience-block'>
+                  {data?.experience?.map(({ title, startDate, endDate, description }, index) => (
+    
+                    <div className='experience-main' key={index}>
+                      <p className='experience-date'>({startDate} to {endDate})</p>
+                      <p className='experience-tittle'>{title}</p>
+                      <ul className='experience-ul'>
+                        {description?.map((desc, index) => (
+                          <li className="experience-description" key={index}> {desc}</li>
+                        ))}
+                      </ul>
+                    </div>
+    
+                  ))}
+                </div>
+              </div> : null}
+              {data?.project[0]?.titles?.length > 0 ? <div className='project-section'>
+                <h3 className='project-heading'>MAJOR PROJECT</h3>
+                <div className='project-block'>
+                  {data?.project?.map(({ titles, stDate, eDate, descriptions }, index) => (
+    
+                    <div className='project-main' key={index}>
+                      <p className='project-date'>({stDate} to {eDate})</p>
+                      <h5 className='project-tittle'>{titles}</h5>
+                      <ul>
+                        {descriptions?.map((desc, index) => (
+                          <li className='project-description' key={index}> {desc}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}</div>
+              </div> : null}
+            </section>
+            <section className='right-section'>
+              <div className='education'>
+                <p className='education-heading'>EDUCATION</p>
+                {data?.education?.map(({ degree, year, collegeName }, index) => (
+                  <div key={index}>
+                    <div className='educ-main'>
+                      <p className='education-year'> {year}</p>
+    
+                      <p className='education-degree'>{degree}</p>
+    
+                      <p className='education-college'> {collegeName}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+    
+              <div className='achievements'>
+                <p className='achievement-h3'> ACHIEVEMENTS</p>
+                {data?.achievement?.map(({ achievementTitle, achievementDescription }, index) => (
+                  <div className='achievement-main' key={index}>
+                    <p className='achievement-tittle'>{achievementTitle}</p>
+                    <p className='achievement-description'>{achievementDescription}</p>
+                  </div>
+                ))}
+    
+              </div>
+    
+              <div className='interests'>
+                <p className='interest-heading'>INTERSEST</p>
+                <div className='grid-container'>
+                  {data?.interest?.map(({ setInterest }, index) => (
+    
+                    <p className='interst-grid' key={index}>{setInterest}</p>
+    
+                  ))}
+                </div>
+              </div>
+    
+              <div className='comma-description'>
+                <img src="assets/comma.png" width={"15px"} height={"15px"} alt='comma'/>
+                {data?.testimonial?.map(({ clientTestimonial }, index) => (
+                  <div className='description' key={index}>
+    
+                    <p className='client-description'>{clientTestimonial}</p>
+    
+                  </div>))}
+                <img src="assets/comma.png" width={"15px"} height={"15px"} alt='comma'/>
+              </div>
+            </section>
+          </section>
+          <footer className="footer">
+            <div className='footer-image'>
+              <img src="assets/value.png" width={"130px"} height={"25px"} alt='value'/>
+    
+            </div>
+          </footer >
+      </Watermark> -->
+        </div>
+      </div>
+    
+</body>
+</html>

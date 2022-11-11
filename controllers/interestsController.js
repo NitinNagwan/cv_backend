@@ -9,7 +9,7 @@ const interestController = {
         name: name,
         image_url: attachment,
       });
-      await newinterest.save((err, success) => {
+      newinterest.save((err, success) => {
         if (err) {
           res.json({
             success: false,
@@ -77,7 +77,7 @@ const interestController = {
             error: err,
           });
         } else {
-          if (docs == null) {
+          if (!docs) {
             res.json({
               success: false,
               message: "Interest does not exsist",
@@ -114,7 +114,6 @@ const interestController = {
         const regex = new RegExp(`${searchKey}`)
         searchObject = {
           name : regex,
-          // email: regex,
         }
       }else{
         searchObject = {}
