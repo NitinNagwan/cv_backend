@@ -12,7 +12,7 @@ const createCvController = {
             error: err,
           });
         } else {
-          if (success.length > 0) {
+          if (success) {
             res.json({
               success: false,
               message: "Cv for the employee already exists",
@@ -24,7 +24,7 @@ const createCvController = {
               cv_details: cv,
             });
 
-            await newCv.save((err, success) => {
+             newCv.save((err, success) => {
               if (err) {
                 res.json({
                   success: false,

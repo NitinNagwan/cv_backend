@@ -1,7 +1,7 @@
 const multer = require("multer");
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
+ destination: (req, file, cb) => {
     cb(null, "./images");
   },
   filename: (req, file, cb) => {
@@ -14,21 +14,15 @@ const storage = multer.diskStorage({
     }
     if (file.mimetype === "image/jpeg") {
       filetype = "jpg";
+      ``;
     }
-    cb(null, `${req.body.id}` + "." + filetype);
+    cb(null, `${req.data.id}` + "." + filetype);
   },
 });
 
-var upload = multer({ storage: storage, limits: { fileSize: 1*1000*1000 } });
-
-// var uploadImage = upload(req, res, function (err) {
-//     if (err instanceof multer.MulterError) {
-//         // A Multer error occurred when uploading.
-//     } else if (err) {
-//         // An unknown error occurred when uploading.
-//     }
-//     // Everything went fine. 
-//     next()
-// })
+var upload = multer({
+  storage: storage,
+  limits: { fileSize: 1 * 1000 * 1000 },
+});
 
 module.exports = upload;

@@ -4,61 +4,50 @@ const interestController = require('../controllers/interestsController')
 const createCvController = require('../controllers/createCvController')
 const keyQualityController = require('../controllers/keyQualitiesController')
 const createPdf = require('../controllers/createPdf')
-var path = require("path");
 const upload = require('../middlewares/upload')
 const uploadImage = require('../controllers/uploadImage')
+const userController = require('../controllers/admin/userController')
+const loginController = require('../controllers/loginController')
+const admin_token_check = require('../middlewares/admin_token_check')
+
 const router = require('express').Router()
-
-// router.get('/api/getEmployeeDetails',getEmployeeDetails)
-// router.post('/api/login', login)
-// router.post('/api/isverify',verifyToken,verify)
-// router.post('/api/employeDetails',employeDetails)
-// router.post('/api/updateCV',updateEmployeeCv)
-// router.post('/api/uploadImage',uploadImage )
-
-
 
 
 // New Apis
-router.post('/employee',employeeController.addEmployee)
-router.put('/employee/:id',employeeController.editEmployee)
-router.delete('/employee',employeeController.deleteEmployee)
-router.get('/employee/:id',employeeController.fetchEmployee)
-router.post('/employee-list',employeeController.employeeList)
+router.post('/employee',admin_token_check,employeeController.addEmployee)
+router.put('/employee/:id',admin_token_check,employeeController.editEmployee)
+router.delete('/employee',admin_token_check,employeeController.deleteEmployee)
+router.get('/employee/:id',admin_token_check,employeeController.fetchEmployee)
+router.post('/employee-list',admin_token_check,employeeController.employeeList)
 
 
-router.post('/expertise',expertiseController.addExpertise)
-router.put('/expertise/:id',expertiseController.editExpertise)
-router.get('/expertise/:id',expertiseController.fetchExpertise)
-router.post('/expertise-list',expertiseController.expertiseList)
+router.post('/expertise',admin_token_check,expertiseController.addExpertise)
+router.put('/expertise/:id',admin_token_check,expertiseController.editExpertise)
+router.get('/expertise/:id',admin_token_check,expertiseController.fetchExpertise)
+router.post('/expertise-list',admin_token_check,expertiseController.expertiseList)
 
 
-router.post('/interest',interestController.addInterest)
-router.put('/interest/:id',interestController.editInterest)
-router.get('/interest/:id',interestController.fetchInterest)
-router.post('/interest-list',interestController.interestList)
+router.post('/interest',admin_token_check,interestController.addInterest)
+router.put('/interest/:id',admin_token_check,interestController.editInterest)
+router.get('/interest/:id',admin_token_check,interestController.fetchInterest)
+router.post('/interest-list',admin_token_check,interestController.interestList)
 
 
-router.post('/cv',createCvController.addCv)
-router.put('/cv/:id',createCvController.editCv)
+router.post('/cv',admin_token_check,createCvController.addCv)
+router.put('/cv/:id',admin_token_check,createCvController.editCv)
 
-router.post('/quality', keyQualityController.addQuality)
-router.put('/quality/:id',keyQualityController.editQuality)
-router.get('/quality/:id',keyQualityController.fetchQuality)
-router.post('/quality-list',keyQualityController.qualityList)
-
-
-router.post('/create_pdf/:id',createPdf.create)
-// router.post('/admin/create_pdf/:id',(req,res)=>{
-//     res.render(path.join(__dirname, "../views/createCvPdf")
-//     ,{
-//       record: "",
-//       printBackground: true
-//     },)
-// })
+router.post('/quality',admin_token_check, keyQualityController.addQuality)
+router.put('/quality/:id',admin_token_check,keyQualityController.editQuality)
+router.get('/quality/:id',admin_token_check,keyQualityController.fetchQuality)
+router.post('/quality-list',admin_token_check,keyQualityController.qualityList)
 
 
-router.post('/uploadProfileImage/',upload.single('profile_image'),uploadImage.image)
+router.post('/create_pdf/:id',admin_token_check,createPdf.create)
+router.post('/uploadProfileImage/:id',admin_token_check,upload.single('profile_image'),uploadImage.image)
+router.post('/user', userController.addUser)
+router.post('/login', loginController.login)
+
+router.post('/logout',admin_token_check, loginController.logout)
 
 
 
