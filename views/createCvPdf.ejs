@@ -15,581 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,300;1,800&display=swap" rel="stylesheet"> 
-    <!-- <%- include('../views/styles.ejs'); %> -->
-
-    <!-- <style  rel="stylesheet">
-
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #fafafa;
-        font: 12pt "Tahoma";
-      }
-
-      * {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-      }
-
-      .page {
-        width: auto;
-        /* min-height: 40.7cm; */
-        /* / padding: 2cm; / */
-        margin: 1cm auto;
-        /* border: 1px #d3d3d3 solid; */
-        /* border-radius: 5px; */
-        background: white;
-        /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
-      }
-
-      .subpage {
-        padding: 1cm;
-        border: 5px red solid;
-        height: 256mm;
-        outline: 2cm #ffeaea solid;
-      }
-
-      header {
-        width: 100%;
-        height: 250px;
-        display: flex;
-        justify-content: space-between;
-        background: #f7f7f9;
-        padding: 1cm 2cm 0 2cm;
-      }
-
-      header .main-header {
-        padding: 0;
-      }
-
-      .main-header .header-name {
-        font-size: 25px;
-      }
-
-      .main-header .header-name p {
-        margin: 10px 0 !important;
-      }
-
-      .first-name { mileageRatesController
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 200;
-        font-size: 40px;
-
-        text-transform: uppercase;
-
-        color: #212121;
-      }
-
-      .last-name {
-        font-weight: 800;
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-size: 40px;
-
-        text-transform: uppercase;
-      }
-
-      .designation {
-        font-size: 18px;
-      }
-
-      .origin {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 33px;
-        color: #212121;
-      }
-
-      .experience {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 33px;
-      }
-
-      .availability {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 33px;
-      }
-
-      .main-header .header-profile {
-        display: flex;
-        justify-content: space-around;
-        gap: 20px;
-      }
-
-      .main-section {
-        margin: 1cm 2cm;
-        display: flex;
-        justify-content: space-between;
-        min-height: 500px;
-      }
-
-      .left-section {
-        width: 65%;
-      }
-
-      .right-section {
-        width: 30%;
-      }
-
-      .profile .qualities {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        gap: 10px;
-      }
-
-      .align-checkbox-icon {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .align-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .profile {
-        font-size: 12px;
-      }
-
-      .quality {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 13.5px;
-        color: #656565;
-      }
-
-      .profile-summary {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 150%;
-        overflow-wrap: break-word;
-        color: #656565;
-      }
-
-      .profile-heading {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 26px;
-        text-transform: capitalize;
-        color: #212121;
-      }
-
-      .skills {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-
-      .quality-heading {
-        font-family: "Noto Sans";
-        font-style: normal;
-
-        font-size: 19px;
-        color: #212121;
-      }
-
-      .expertise {
-        display: flex;
-        justify-content: space-between;
-        font-size: 12px;
-        border: 1px solid #d9d9dc;
-        border-radius: 5px;
-        align-items: center;
-      }
-      .experties-heading {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 26px;
-        text-transform: capitalize;
-        color: #212121;
-      }
-
-      .skills {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 10px;
-      }
-
-      .experience-year {
-        margin-right: 7px;
-      }
-      .experience-span {
-        margin-left: 3px;
-      }
-      .skill-img {
-        margin: 5px;
-      }
-      .education {
-        background-color: #f7f7f9;
-        width: 100%;
-        height: 450px;
-        padding: 10px 0px 0px 30px;
-      }
-
-      .educ-main {
-        line-height: 6px;
-      }
-
-      .education-heading {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        text-transform: capitalize;
-
-        color: #212121;
-      }
-
-      .education-year {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        margin: 0px;
-        color: #656565;
-      }
-
-      .education-degree {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 15px;
-        text-transform: uppercase;
-
-        color: #212121;
-      }
-
-      .education-college {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #656565;
-      }
-
-      .achievements {
-        background-color: #f7f7f9;
-        width: 100%;
-        height: 300px;
-        padding: 10px 0px 0px 30px;
-        margin-top: 30px;
-      }
-
-      .achievement-h3 {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 800;
-        font-size: 20px;
-        text-transform: capitalize;
-
-        color: #212121;
-      }
-
-      .achievement-tittle {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 13px;
-
-        color: #212121;
-      }
-
-      .achievement-description {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 10px;
-
-        color: #656565;
-      }
-
-      .interests {
-        background-color: #f7f7f9;
-        width: 100%;
-        height: 280px;
-        padding: 10px 0px 0px 30px;
-        margin-top: 30px;
-      }
-
-      .interest-heading {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 800;
-        font-size: 20px;
-        text-transform: capitalize;
-
-        color: #212121;
-      }
-
-      .grid-container {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .interst-grid {
-        font-family: "Noto Sans";
-        font-style: normal;
-
-        font-size: 15px;
-        line-height: 33px;
-
-        text-align: center;
-
-        color: #231f20;
-      }
-
-      .description {
-        background-color: #f7f7f9;
-        width: 100%;
-        overflow-wrap: break-word;
-        height: 224px;
-        padding: 10px 10px 0px 30px;
-        margin-top: 30px;
-      }
-
-      .client-description {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 18px;
-
-        color: #231f20;
-      }
-
-      .experience-heading {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 26px;
-
-        text-transform: capitalize;
-        margin-bottom: inherit;
-        color: #212121;
-      }
-
-      .experience-date {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        margin-top: inherit;
-        margin-bottom: inherit;
-
-        color: #656565;
-      }
-
-      .experience-tittle {
-        font-family: "Noto Sans";
-        font-style: normal;
-        padding: inherit;
-
-        margin-top: inherit;
-        margin-bottom: inherit;
-        font-size: 18px;
-        color: #212121;
-      }
-
-      .experiene-section {
-        padding: 0 5px;
-      }
-
-      .experience-description {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 150%;
-
-        color: #656565;
-      }
-
-      .experience-block {
-        margin: 0.5em;
-        padding-left: 2em;
-        border-left: 1px dotted #ffb81d;
-      }
-
-      .experience-main {
-        position: relative;
-      }
-      .experience-ul {
-        padding: initial;
-        margin-left: 29px;
-      }
-
-      .experience-main::before {
-        content: "";
-        position: absolute;
-        left: -2.35em;
-        background-color: #ffb81d;
-        width: 0.7em;
-        height: 0.7em;
-        border-radius: 50%;
-        transform: translate(-0.5pm, 0.2em);
-      }
-
-      .experience-main::after {
-        content: "";
-        position: absolute;
-        left: -2.55em;
-        top: -0.2em;
-        border: 1px solid #ffb81d;
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        transform: translate(-0.5pm, 0.2em);
-      }
-
-      .project-heading {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 26px;
-        text-transform: capitalize;
-        margin-bottom: inherit;
-        color: #212121;
-      }
-
-      .project-date {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        margin-top: inherit;
-        margin-bottom: inherit;
-
-        color: #656565;
-      }
-
-      .project-tittle {
-        font-family: "Noto Sans";
-        font-style: normal;
-        padding: inherit;
-
-        margin-top: inherit;
-        margin-bottom: inherit;
-        font-size: 18px;
-        color: #212121;
-      }
-
-      .project-section {
-        padding: 0 5px;
-      }
-
-      .project-description {
-        font-family: "Noto Sans";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 25px;
-
-        color: #656565;
-      }
-
-      .project-block {
-        margin: 0.5em;
-        padding: 0 0 3em 2em;
-        border-left: 1px dotted #ffb81d;
-      }
-
-      .project-main {
-        position: relative;
-      }
-
-      .project-main::before {
-        content: "";
-        position: absolute;
-        left: -2.35em;
-        background-color: #ffb81d;
-        width: 0.7em;
-        height: 0.7em;
-        border-radius: 50%;
-        transform: translate(-0.5pm, 0.2em);
-      }
-
-      .project-main::after {
-        content: "";
-        position: absolute;
-        left: -2.55em;
-        top: -0.2em;
-        border: 1px solid #ffb81d;
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        transform: translate(-0.5pm, 0.2em);
-      }
-      .footer {
-        position: absolute;
-        width: 905px;
-        height: 97px;
-        background: #f7f7f9;
-        margin-top: 155px;
-      }
-      .footer-image {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-      .on-demand {
-        margin-top: 17px;
-        margin-left: -101px;
-      }
-      .react-datepicker {
-        width: 100%;
-      }
-      .react-datepicker__month-container {
-        float: none;
-      }
-      .react-datepicker__month .react-datepicker__month-text,
-      .react-datepicker__month .react-datepicker__quarter-text {
-        width: 6rem !important;
-      }
-
-      @page {
-        size: A4;
-        margin: 0;
-      }
-
-      @media print {
-        .page {
-          margin: 0;
-          border: initial;
-          border-radius: initial;
-          width: initial;
-          min-height: initial;
-          box-shadow: initial;
-          background: initial;
-          page-break-after: always;
-        }
-      }
-
-      hr.vertical {
-        width: 0px;
-        height: 100px;
-      }
-    </style> -->
+    <%- include('../views/styles.ejs'); %>
   </head>
   <body>
     <div class="book">
@@ -617,7 +43,7 @@
               <% if (record.cv_details.header.origin)  { %>
                 <div class="align-logo">
                   <img
-                    src=""
+                    src="http://localhost:5000/location.png"
                     width="15px"
                     height="17px"
                     alt=""
@@ -625,12 +51,12 @@
                   <p class="origin">Origin: <%= record.cv_details.header.origin %> </p>
                 </div>
              <% } else { %>
-                " "
+
             <%  } %>
               <%  if (record.cv_details.header.experience) { %>
                 <div class="align-logo">
                   <img
-                    src=""
+                    src= "http://localhost:5000/exp.png"
                     width="20px"
                     height="20px"
                     alt=""
@@ -645,7 +71,7 @@
               <% if (record.cv_details.header.availability) { %>
                 <div class="align-logo">
                   <img
-                    src=""
+                    src= "http://localhost:5000/time.png"
                     width="17px"
                     height="17px"
                     alt=""
@@ -656,14 +82,12 @@
                 </div>
             <% } else { %>
                
-                
              <% }   %>
             </div>
           </div>
           <% if (record.cv_details.header.image_url){ %>
            <div class="profile-pic">
-            <img src = <%= record.cv_details.header.image_url %>  
-            width="200px" height="200px" alt="r2" />
+            <img src = "<%= record.cv_details.header.image_url %>" >
          </div>
           <% } else { %>
 
@@ -673,318 +97,178 @@
           <section class="left-section">
             <div class="profile">
               <h1 class="profile-heading">PROFILE</h1>
-              <p class="profile-summary">record.cv_details.summary </p>
+              <p class="profile-summary"><%= record.cv_details.header.summary %> </p>
               <h5 class="quality-heading">KEY QUALITIES</h5>
+              <% if(record.cv_details.keyQualities) { %>
               <div class="qualities align-checkbox-icon">
-                {data?.keyQualities?.map((item, index) => (
+                <% for(let i = 0 ;  i< record.cv_details.keyQualities.length; i++ ) { %>
                   <div class="align-checkbox-icon" key={index}>
                     
                       <img
-                        src="assets/checkcircle.png"
+                        src= "<%= record.cv_details.keyQualities[i].attachment %>"
                         width="15px"
                         height="15px"
                         alt="checkCircle"
                       />
-                      <p class="quality">{item?.quality?.quality} </p>{" "}
+                      <p class="quality"><%= record.cv_details.keyQualities[i].name %> </p>
                   </div>
-                ))}
+                <%  } %>
+                <% } else { %>
+
+                  <% } %>
               </div>
             </div>
+            <% if(record.cv_details.expertise) { %>
             <div class="expertises">
               <h2 class="experties-heading">EXPERTISE</h2>
               <div class="skills">
-                {data?.expertise?.map(({ skill, years }, index) => (
-                  <div class="expertise" key={index}>
+               <% for (let i = 0; i < record.cv_details.expertise.length; i++) { %>
+                  <div class="expertise" key= <%= record.cv_details.expertise[i].name %> >
                     <div class="skill">
                       <img
-                        class=" skill-img"
-                        src={`assets/${skill}.png`}
+                        class="skill-img"
+                        src="<%= record.cv_details.expertise[i].image_url %>"
                         alt="W"
                         width="25"
                         height="25"
                       />
-                      <p style="padding-left: 10px" >{skill}</p>
+                      <p style="padding-left: 10px" ><%= record.cv_details.expertise[i].name %></p>
                     </div>
-                    <Rating name="disabled" value={2} disabled />
-                    <p class="experience-year">
-                      {years}
-                      <span class="experience-span">+ years</span>
-                    </p>
-                    <br />
+                    <!-- <Rating name="disabled" value = "<% record.cv_details.expertise[i].rating %>"  disabled /> -->
+                    <p class='experience-year'><%= record.cv_details.expertise[i].experience %></p>
+                  <br />
                   </div>
-                ))}
+                <% } %>
+                <% } else { %> 
+
+                <% } %>
               </div>
             </div>
-            {data?.experience[0]?.titles?.length > 0 ? (
+            <% if(record.cv_details.experience) { %>
               <div class="experiene-section">
                 <h3 class="experience-heading">PROFESSIONAL EXPERIENCE</h3>
-                <div class="experience-block">
-                  {data?.experience?.map(
-                    ({ title, startDate, endDate, description }, index) => (
-                      <div class="experience-main" key={index}>
-                        <p class="experience-date">
-                          ({startDate} to {endDate})
-                        </p>
-                        <p class="experience-tittle">{title}</p>
-                        <ul class="experience-ul">
-                          {description?.map((desc, index) => (
-                            <li class="experience-description" key={index}>
-                              {" "}
-                              {desc}
-                            </li>
-                          ))}
-                        </ul>
+                  <div class="experience-block">
+                      <div class="experience-main">
+                          <% for(let i = 0; i < record.cv_details.experience.length; i++) { %>
+                          <p class="experience-date">
+                            <%= record.cv_details.experience[i].startDate %> to <%=record.cv_details.experience[i].endDate %>
+                          </p>
+                          <p class="experience-tittle"><%= record.cv_details.experience[i].job_title %></p>
+
+                          <% if(record.cv_details.experience[i].description) { %>
+                            <ul class="experience-ul">
+                              <% for(let j = 0; j < record.cv_details.experience[i].description.length; j++) { %>
+                                  <li class="experience-description">
+                                  <%= record.cv_details.experience[i].description[j] %>
+                              </li>
+                              <% } %>
+                            </ul>
+                            <% }  else { %>
+                              <% } %>
                       </div>
-                    )
-                  )}
-                </div>
-              </div>
-            ) : null}
-            {data?.project[0]?.titles?.length > 0 ? (
-              <div class="project-section">
-                <h3 class="project-heading">MAJOR PROJECT</h3>
-                <div class="project-block">
-                  {data?.project?.map(
-                    ({ titles, stDate, eDate, descriptions }, index) => (
-                      <div class="project-main" key={index}>
-                        <p class="project-date">
-                          ({stDate} to {eDate})
-                        </p>
-                        <h5 class="project-tittle">{titles}</h5>
-                        <ul>
-                          {descriptions?.map((desc, index) => (
-                            <li class="project-description" key={index}>
-                              {" "}
-                              {desc}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-            ) : null}
-          </section>
-          <section class="right-section">
-            <div class="education">
-              <p class="education-heading">EDUCATION</p>
-              {data?.education?.map(({ degree, year, collegeName }, index) => (
-                <div key={index}>
-                  <div class="educ-main">
-                    <p class="education-year"> {year}</p>
-  
-                    <p class="education-degree">{degree}</p>
-  
-                    <p class="education-college"> {colle<section class="main-section">
-                        <section class="left-section">
-                          <div class="profile">
-                            <h1 class="profile-heading">PROFILE</h1>
-                            <p class="profile-summary">{data.summary}</p>
-                            <h5 class="quality-heading">KEY QUALITIES</h5>
-                            <div class="qualities align-checkbox-icon">
-                              {data?.keyQualities?.map((item, index) => (
-                                <div class="align-checkbox-icon" key={index}>
-                                  
-                                    <img
-                                      src="assets/checkcircle.png"
-                                      width="15px"
-                                      height="15px"
-                                      alt="checkCircle"
-                                    />
-                                    <p class="quality">{item?.quality?.quality} </p>{" "}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                          <div class="expertises">
-                            <h2 class="experties-heading">EXPERTISE</h2>
-                            <div class="skills">
-                              {data?.expertise?.map(({ skill, years }, index) => (
-                                <div class="expertise" key={index}>
-                                  <div class="skill">
-                                    <img
-                                      class=" skill-img"
-                                      src={`assets/${skill}.png`}
-                                      alt="W"
-                                      width="25"
-                                      height="25"
-                                    />
-                                    <p style="padding-left: 10px" >{skill}</p>
-                                  </div>
-                                  <Rating name="disabled" value={2} disabled />
-                                  <p class="experience-year">
-                                    {years}
-                                    <span class="experience-span">+ years</span>
-                                  </p>
-                                  <br />
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                          {data?.experience[0]?.titles?.length > 0 ? (
-                            <div class="experiene-section">
-                              <h3 class="experience-heading">PROFESSIONAL EXPERIENCE</h3>
-                              <div class="experience-block">
-                                {data?.experience?.map(
-                                  ({ title, startDate, endDate, description }, index) => (
-                                    <div class="experience-main" key={index}>
-                                      <p class="experience-date">
-                                        ({startDate} to {endDate})
-                                      </p>
-                                      <p class="experience-tittle">{title}</p>
-                                      <ul class="experience-ul">
-                                        {description?.map((desc, index) => (
-                                          <li class="experience-description" key={index}>
-                                            {" "}
-                                            {desc}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </div>
-                          ) : null}
-                          {data?.project[0]?.titles?.length > 0 ? (
-                            <div class="project-section">
-                              <h3 class="project-heading">MAJOR PROJECT</h3>
-                              <div class="project-block">
-                                {data?.project?.map(
-                                  ({ titles, stDate, eDate, descriptions }, index) => (
-                                    <div class="project-main" key={index}>
-                                      <p class="project-date">
-                                        ({stDate} to {eDate})
-                                      </p>
-                                      <h5 class="project-tittle">{titles}</h5>
-                                      <ul>
-                                        {descriptions?.map((desc, index) => (
-                                          <li class="project-description" key={index}>
-                                            {" "}
-                                            {desc}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </div>
-                          ) : null}
-                        </section>
-                        <section class="right-section">
-                          <div class="education">
-                            <p class="education-heading">EDUCATION</p>
-                            {data?.education?.map(({ degree, year, collegeName }, index) => (
-                              <div key={index}>
-                                <div class="educ-main">
-                                  <p class="education-year"> {year}</p>
-                
-                                  <p class="education-degree">{degree}</p>
-                
-                                  <p class="education-college"> {collegeName}</p>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                
-                          <div class="achievements">
-                            <p class="achievement-h3"> ACHIEVEMENTS</p>
-                            {data?.achievement?.map(
-                              ({ achievementTitle, achievementDescription }, index) => (
-                                <div class="achievement-main" key={index}>
-                                  <p class="achievement-tittle">{achievementTitle}</p>
-                                  <p class="achievement-description">
-                                    {achievementDescription}
-                                  </p>
-                                </div>
-                              )
-                            )}
-                          </div>
-                
-                          <div class="interests">
-                            <p class="interest-heading">INTERSEST</p>
-                            <div class="grid-container">
-                              {data?.interest?.map(({ setInterest }, index) => (
-                                <p class="interst-grid" key={index}>
-                                  {setInterest}
-                                </p>
-                              ))}
-                            </div>
-                          </div>
-                
-                          <div class="comma-description">
-                            <img
-                              src="assets/comma.png"
-                              width="15px"
-                              height="15px"
-                              alt="comma"
-                            />
-                            {data?.testimonial?.map(({ clientTestimonial }, index) => (
-                              <div class="description" key={index}>
-                                <p class="client-description">{clientTestimonial}</p>
-                              </div>
-                            ))}
-                            <img
-                              src="assets/comma.png"
-                              width="15px"
-                              height="15px"
-                              alt="comma"
-                            />
-                          </div>ex}>
-                    <p class="achievement-tittle">{achievementTitle}</p>
-                    <p class="achievement-description">
-                      {achievementDescription}
-                    </p>
+                      <% } %>
                   </div>
-                )
-              )}
-            </div>
+              </div>
+            <% } else { %>
+
+                <% } %>          
+            <% if(record.cv_details.projects) { %>
+                  <div class="project-section">
+                    <h3 class="project-heading">MAJOR PROJECT</h3>
+                    <div class="project-block">
+                          <% for(let i = 0; i < record.cv_details.projects.length; i++ ) { %>
+                            <div class="project-main">
+                              <p class="project-date">
+                                <%= record.cv_details.projects[i].startDate %> to <%=record.cv_details.projects[i].endDate %>
+                              </p>
+                              <h5 class="project-tittle"><%= record.cv_details.projects[i].title %></h5>
+                              <ul>
+                                <% for(let j = 0; j < record.cv_details.projects[i].description.length; j++) { %>
+                                  <li class="project-description">
+                                  <%= record.cv_details.projects[i].description[j] %>
+                                  </li>
+                                <% } %>
+                              
+                              </ul>
+                            </div>
+                          <% } %>
+                      </div>
+                  </div>
+            <% } else { %>
+                 <% } %>
+          </section>
+          <section class='right-section'>
+            <% if(record.cv_details.education) { %>
+              <div class='education'>
+                <p class='education-heading'>EDUCATION</p>
+                <% for(let i = 0; i < record.cv_details.education.length; i++) { %>
+                  <div key={index}>
+                    <div class='educ-main'>
+                      <p class='education-year'> <%= record.cv_details.education[i].year %> </p>
   
-            <div class="interests">
-              <p class="interest-heading">INTERSEST</p>
-              <div class="grid-container">
-                {data?.interest?.map(({ setInterest }, index) => (
-                  <p class="interst-grid" key={index}>
-                    {setInterest}
-                  </p>
-                ))}
+                      <p class='education-degree'> <%= record.cv_details.education[i].degree %> </p>
+  
+                      <p class='education-college'> <%= record.cv_details.education[i].collegeName %> </p>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+            <% } else { %>  
+
+               <% } %>
+            <% if(record.cv_details.achivements) { %>
+              <div class='achievements'>
+                <p class='achievement-h3'> ACHIEVEMENTS</p>
+                <% for(let i = 0; i < record.cv_details.achivements.length; i++ ) { %>
+                  <div class='achievement-main' key={index}>
+                    <p class='achievement-tittle'><%= record.cv_details.achivements[i].achievementTitle %></p>
+                    <p class='achievement-description'> <%= record.cv_details.achivements[i].achievementDescription %></p>
+                  </div>
+                <% } %>  
+              </div>
+           <% } else { %>
+
+           <% } %>
+           <% if(record.cv_details.interests) { %>
+            <div class='interests'>
+              <p class='interest-heading'>INTERSEST</p>
+              <div class='grid-container'>
+                <% for(let i = 0; i < record.cv_details.interests.length; i++ ) { %>
+                <p class='interst-grid' ><%= record.cv_details.interests[i].name %></p>
+                <% } %>  
               </div>
             </div>
-  
-            <div class="comma-description">
-              <img
-                src="assets/comma.png"
-                width="15px"
-                height="15px"
-                alt="comma"
-              />
-              {data?.testimonial?.map(({ clientTestimonial }, index) => (
-                <div class="description" key={index}>
-                  <p class="client-description">{clientTestimonial}</p>
-                </div>
-              ))}
-              <img
-                src="assets/comma.png"
-                width="15px"
-                height="15px"
-                alt="comma"
-              />
-            </div>
+            <% } else { %>
+
+            <% } %>
+            <% if(record.cv_details.testimony) { %>
+              <div class='comma-description'>
+                <img src= "http://localhost:5000/comma.png" width="15px" height="15px" alt='comma'/>
+                  <% for(let i = 0; i < record.cv_details.testimony.length; i++)  { %>
+                  <div class='description' key={index}></div>
+                      <p class='client-description'> <%= record.cv_details.testimony[i].clientTestimonial %> </p>
+                  </div> 
+                  <% } %>
+                <img src="assets/comma.png" width="15px" height="15px" alt='comma'/>
+              </div>
+            <% } else { %>
+
+            <% } %>
+
           </section>
         </section>
         <footer class="footer">
           <div class="footer-image">
             <img
-              src="assets/value.png"
-              width="130px"
+              src="http://localhost:5000/value.png"
+              width="150px"
               height="25px"
               alt="value"
             />
           </div>
         </footer>
        </Watermark>
+        
       </div>
     </div>
   </body>

@@ -1,14 +1,24 @@
-const PDFDocument = require("pdfkit");
-const fs = require("fs");
 var path = require("path");
 const cv = require("../Models/cvModel");
 var html_to_pdf = require('html-pdf-node');
+const transporter = require("../emailTransporterFile")
 
 
 const createPdf = {
   create(req, res) {
     const { id } = req.params;
 
+    function sendEmail(){
+      var mailOptions = {
+        from: "no-reply@no-reply.com",
+        to: "no-reply@no-reply.com",
+        subject: "No Reply",
+        text: "No Reply",
+
+        
+      }
+      transporter.sendMail(mailOptions)
+    }
     try {
       cv.findOne({ of_user: id }, (err, docs) => {
         if (err) {
@@ -18,7 +28,6 @@ const createPdf = {
             error: err,
           });
         } else {
-          console.log(docs)
           if (!docs) {
             res.json({
               success: false,
@@ -31,9 +40,8 @@ const createPdf = {
               path.join(__dirname, "../views/createCvPdf")
               ,{
                 record: docs,
-                printBackground: true
+                printBackground: true,
               },
-              // ,
               (err, doc) => {
                 if (err) {
                   res.json({

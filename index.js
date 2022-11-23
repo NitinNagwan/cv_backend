@@ -1,13 +1,11 @@
 const connection = require("./myConnection");
 const express = require("express");
 const routes = require("./routes/index");
-
 const app = express();
 const cors = require("cors");
-const fs = require('fs');
 const path = require('path');
 const bodyParser = require("body-parser");
-const mongoose = require('mongoose')
+
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -17,13 +15,11 @@ app.set("view engine", "ejs");
 
 const PORT = 5000;
 
-app.use(bodyParser.json()).use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+
 app.use(express.static(path.join(__dirname, '/public')))
 app.use(express.static(path.join(__dirname, '/images')))
+app.use(express.static(path.join(__dirname, '/assets')))
+
 app.use(cors());
 app.use(express.json());
 

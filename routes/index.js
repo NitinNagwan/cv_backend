@@ -4,11 +4,12 @@ const interestController = require('../controllers/interestsController')
 const createCvController = require('../controllers/createCvController')
 const keyQualityController = require('../controllers/keyQualitiesController')
 const createPdf = require('../controllers/createPdf')
-const upload = require('../middlewares/upload')
+const upload = require('../middlewares/uploadProfile')
 const uploadImage = require('../controllers/uploadImage')
 const userController = require('../controllers/admin/userController')
 const loginController = require('../controllers/loginController')
 const admin_token_check = require('../middlewares/admin_token_check')
+const upload_test = require('../middlewares/uploadImage')
 
 const router = require('express').Router()
 
@@ -42,12 +43,16 @@ router.get('/quality/:id',admin_token_check,keyQualityController.fetchQuality)
 router.post('/quality-list',admin_token_check,keyQualityController.qualityList)
 
 
-router.post('/create_pdf/:id',admin_token_check,createPdf.create)
-router.post('/uploadProfileImage/:id',admin_token_check,upload.single('profile_image'),uploadImage.image)
+
+router.post('/uploadProfileImage',admin_token_check,upload.single('profile_image'),uploadImage.image)
 router.post('/user', userController.addUser)
 router.post('/login', loginController.login)
 
 router.post('/logout',admin_token_check, loginController.logout)
+
+router.post('/uploadImage',admin_token_check,upload_test.single('image'),uploadImage.image)
+
+router.post('/create_pdf/:id',createPdf.create)
 
 
 

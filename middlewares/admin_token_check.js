@@ -1,7 +1,8 @@
-const key = "x-access-token";
+require("dotenv")
 const Users = require("../Models/userModel");
 
 const jwt = require("jsonwebtoken");
+key = process.env.SECRET_KEY
 
 const admin_token_check = (req, res, next) => {
   try {
@@ -19,7 +20,8 @@ const admin_token_check = (req, res, next) => {
           if (err) {
             res.json({
               success: false,
-              message: err.message,
+              message: "Tokem expired",
+              error: err
             });
           } else {
             if (token == user.token) {
